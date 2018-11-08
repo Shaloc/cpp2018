@@ -83,6 +83,16 @@ public:
 
 };
 
+class ValuePtr {
+private:
+    Value* _ptr;
+public:
+    ValuePtr(Value* ptr) : _ptr(ptr) { }
+public:
+    Value *operator->() { return _ptr; }
+    Value &operator*() { return *_ptr; }
+};
+
 ostream& operator<<(ostream &os, const Value& value);
 istream& operator>>(istream &is, Value &value);
 

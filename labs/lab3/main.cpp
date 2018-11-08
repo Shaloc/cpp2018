@@ -13,5 +13,8 @@ int main(int argc, char** argv) {
     Value c;
     c += a;
     cout << c << endl;
+    ValuePtr ptr(&a);
+    cout << (*ptr)[3] << endl;
+    cout << ptr->value() << endl;
     return 0;
 }
