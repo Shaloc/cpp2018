@@ -27,6 +27,12 @@ public:
             _data[i] = data;
         }
     }
+    Vector(const Vector& rhs): _length(rhs._length), _is_valid(rhs._is_valid) {
+        _data = new double[rhs._length];
+        for(int i = 0; i < rhs._length; i++) {
+            _data[i] = rhs[i];
+        }
+    }
     ~Vector();
 
 public:

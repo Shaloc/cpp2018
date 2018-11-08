@@ -50,7 +50,7 @@ int Matrix::cols() const {
 }
 
 double* const Matrix::operator[](int row) const {
-    auto temp = new double[_rows*_cols];
+    double* temp = new double[_rows*_cols];
     for(int i = 0; i < _rows; ++i) {
         for (int j = 0; j < _cols; ++j) {
             temp[_cols * i + j] = _data[_cols * i + j];
@@ -81,7 +81,7 @@ Matrix Matrix::operator+(const Matrix &rhs) const {
     if (_cols != rhs.cols() || _rows != rhs.rows())
         return Matrix::INVALID_MATRIX;
     else {
-        auto temp = new double[_rows * _cols];
+        double* temp = new double[_rows * _cols];
         for (int i = 0; i < _rows; ++i) {
             for (int j = 0; j < _cols; ++j) {
                 temp[_cols * i + j] = (*this)[i][j] + rhs[i][j];
@@ -94,7 +94,7 @@ Matrix Matrix::operator+(const Matrix &rhs) const {
 Matrix Matrix::operator-(const Matrix &rhs) const {
     if (_cols != rhs.cols() || _rows != rhs.rows())
         return Matrix::INVALID_MATRIX;
-    auto temp = new double[_rows*_cols];
+    double* temp = new double[_rows*_cols];
     for (int i = 0; i < _rows; ++i) {
         for (int j = 0; j < _cols; ++j) {
             temp[_cols * i + j] = (*this)[i][j] - rhs[i][j];
@@ -104,7 +104,7 @@ Matrix Matrix::operator-(const Matrix &rhs) const {
 }
 
 Matrix Matrix::operator-() const {
-    auto temp = new double[_rows*_cols];
+    double* temp = new double[_rows*_cols];
     for (int i = 0; i < _rows; ++i) {
         for (int j = 0; j < _cols; ++j) {
             temp[_cols * i + j] = -(*this)[i][j];
@@ -116,7 +116,7 @@ Matrix Matrix::operator-() const {
 Matrix Matrix::operator*(const Matrix &rhs) const {
     if (_cols != rhs.rows())
         return Matrix::INVALID_MATRIX;
-    auto temp = new double[_rows*rhs.cols()];
+    double* temp = new double[_rows*rhs.cols()];
     int result_cols = rhs.cols();
     int result_rows = _rows;
     int calc_time = _cols;
@@ -131,7 +131,7 @@ Matrix Matrix::operator*(const Matrix &rhs) const {
 }
 
 Matrix Matrix::operator*(int rhs) const {
-    auto temp = new double[_rows*_cols];
+    double* temp = new double[_rows*_cols];
     for (int i = 0; i < _rows; ++i) {
         for (int j = 0; j < _cols; ++j) {
             temp[_cols * i + j] = _data[_cols*i + j] * rhs;
@@ -141,7 +141,7 @@ Matrix Matrix::operator*(int rhs) const {
 }
 
 Matrix Matrix::trans() const {
-    auto temp = new double[_rows*_cols];
+    double* temp = new double[_rows*_cols];
     for (int i = 0; i < _rows; ++i) {
         for (int j = 0; j < _cols; ++j) {
             temp[_rows * j + i] = _data[_cols * i + j];
@@ -163,6 +163,6 @@ void Matrix::display() {
 
 Matrix::~Matrix() {
     delete[](_data);
-    _data = nullptr;
+    _data = NULL;
     _valid = 0;
 }

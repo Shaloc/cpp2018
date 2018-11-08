@@ -10,7 +10,7 @@ double Vector::operator[](int rank) const {
 Vector Vector::operator+(const Vector &rhs) const {
     if(rhs.size() != _length)
         return Vector::INVALID_VECTOR;
-    auto temp_data = new double[rhs.size()];
+    double* temp_data = new double[rhs.size()];
     for(int i = 0; i < rhs.size(); ++i) {
         temp_data[i] = rhs[i] + _data[i];
     }
@@ -18,7 +18,7 @@ Vector Vector::operator+(const Vector &rhs) const {
 }
 
 Vector Vector::operator+(double rhs) const {
-    auto temp_data = new double[_length];
+    double* temp_data = new double[_length];
     for(int i = 0; i < _length; ++i) {
         temp_data[i] = rhs + _data[i];
     }
@@ -28,7 +28,7 @@ Vector Vector::operator+(double rhs) const {
 Vector Vector::operator-(const Vector &rhs) const {
     if(rhs.size() != _length)
         return Vector::INVALID_VECTOR;
-    auto temp_data = new double[rhs.size()];
+    double* temp_data = new double[rhs.size()];
     for(int i = 0; i < rhs.size(); ++i) {
         temp_data[i] = rhs[i] - _data[i];
     }
@@ -36,7 +36,7 @@ Vector Vector::operator-(const Vector &rhs) const {
 }
 
 Vector Vector::operator-(double rhs) const {
-    auto temp_data = new double[_length];
+    double* temp_data = new double[_length];
     for(int i = 0; i < _length; ++i) {
         temp_data[i] = rhs - _data[i];
     }
@@ -44,7 +44,7 @@ Vector Vector::operator-(double rhs) const {
 }
 
 Vector Vector::operator-() const {
-    auto temp_data = new double[_length];
+    double* temp_data = new double[_length];
     for(int i = 0; i < _length; ++i) {
         temp_data[i] = -_data[i];
     }
@@ -70,7 +70,7 @@ bool Vector::operator!=(const Vector &rhs) const {
 }
 
 Vector Vector::operator*(double rhs) const {
-    auto temp_data = new double[_length];
+    double* temp_data = new double[_length];
     for(int i = 0; i < _length; ++i) {
         temp_data[i] = rhs * _data[i];
     }
@@ -101,5 +101,5 @@ void Vector::display() {
 
 Vector::~Vector() {
     delete [] _data;
-    _data = nullptr;
+    _data = NULL;
 }
