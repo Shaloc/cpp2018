@@ -3,6 +3,7 @@
 //
 
 #include <iostream>
+#include "value.h"
 
 using namespace std;
 
