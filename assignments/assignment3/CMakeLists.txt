@@ -5,4 +5,4 @@ set(CMAKE_CXX_STANDARD 11)
 
 add_compile_options(-Wall)
 
-add_executable(CPPHomework3 main.cpp Matrix.cpp Vector.cpp)
+add_executable(assignment3 main.cpp Matrix.cpp Vector.cpp)

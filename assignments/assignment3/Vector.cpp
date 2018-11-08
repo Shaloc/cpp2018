@@ -9,7 +9,7 @@ double Vector::operator[](int rank) const {
 
 Vector Vector::operator+(const Vector &rhs) const {
     if(rhs.size() != _length)
-        return INVALID_VECTOR;
+        return Vector::INVALID_VECTOR;
     auto temp_data = new double[rhs.size()];
     for(int i = 0; i < rhs.size(); ++i) {
         temp_data[i] = rhs[i] + _data[i];
@@ -27,7 +27,7 @@ Vector Vector::operator+(double rhs) const {
 
 Vector Vector::operator-(const Vector &rhs) const {
     if(rhs.size() != _length)
-        return INVALID_VECTOR;
+        return Vector::INVALID_VECTOR;
     auto temp_data = new double[rhs.size()];
     for(int i = 0; i < rhs.size(); ++i) {
         temp_data[i] = rhs[i] - _data[i];
