@@ -26,7 +26,7 @@ public:
     Matrix operator-(const Matrix& rhs) const;
     Matrix operator-() const;
     Matrix operator*(const Matrix& rhs) const;
-    Matrix operator*(int rhs) const;
+    Matrix operator*(double rhs) const;
     Matrix trans() const;
     void display();
 };

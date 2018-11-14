@@ -130,7 +130,7 @@ Matrix Matrix::operator*(const Matrix &rhs) const {
     return Matrix(_rows, rhs.cols(), temp);
 }
 
-Matrix Matrix::operator*(int rhs) const {
+Matrix Matrix::operator*(double rhs) const {
     double* temp = new double[_rows*_cols];
     for (int i = 0; i < _rows; ++i) {
         for (int j = 0; j < _cols; ++j) {
