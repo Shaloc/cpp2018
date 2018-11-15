@@ -68,7 +68,7 @@ public:
 
 // 列表迭代器类
 class CPPListIterator {
-private:
+public:
     friend class CPPList;   //声明为CPPList的友元以便访问CPPList中的变量
     ListNodePosi _ptr;      //迭代量
 public:
