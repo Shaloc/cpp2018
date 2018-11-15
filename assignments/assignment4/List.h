@@ -18,7 +18,7 @@ struct ListNode {
     ListNodePosi next;//后驱（也写作succ）
     // 构造函数
     ListNode() { } //头尾哨兵节点的构造函数
-    ListNode(int e, ListNodePosi p=nullptr, ListNodePosi s=nullptr) :
+    ListNode(int e, ListNodePosi p=NULL, ListNodePosi s=NULL) :
         data(e), prev(p), next(s) {} //默认构造函数
     // 操作接口
     ListNodePosi insertAsPrev(int const& e);//紧靠当前节点之前插入新节点
