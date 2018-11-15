@@ -38,10 +38,10 @@ protected:
 
 public:
     typedef CPPListIterator Iterator;//声明迭代器
-    typedef CPPListIterator ConstIterator;
+    typedef CPPListIterator ConstIterator;//声明整形迭代器--你已经足够成熟了！可以完全用整形了！
     // 构造函数
     CPPList();//默认构造函数，仅做初始化处理
-    CPPList(const CPPList& rhs) { copyNodes( rhs.first(), rhs._size); }//拷贝构造函数，用于最后一问
+    CPPList( const CPPList& rhs ) { copyNodes( rhs.first(), rhs._size); }//拷贝构造函数，用于最后一问
     // 析构函数
     ~CPPList() { clear(); delete header; delete trailer; } //析构函数
     // 操作函数
