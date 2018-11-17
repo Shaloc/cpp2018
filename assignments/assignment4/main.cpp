@@ -70,7 +70,6 @@ int main(int argc, char* argv[])
 	{
 		assert(*current == array[idx]); 
 	}
-
 	cout << "80, for interator methods, i.e. begin(), next(), and end()" << endl;
 	//////////////////////////////////////////////////////////////////////////
 	// 嗯，它没有作用，只是看看你的代码会不会出错

@@ -17,7 +17,7 @@ struct ListNode {
     ListNodePosi prev;//前驱（也写作pred）
     ListNodePosi next;//后驱（也写作succ）
     // 构造函数
-    ListNode() { } //头尾哨兵节点的构造函数
+    ListNode() { }//头尾哨兵节点的构造函数
     ListNode(int e, ListNodePosi p=NULL, ListNodePosi s=NULL) :
         data(e), prev(p), next(s) {} //默认构造函数
     // 操作接口
@@ -38,7 +38,7 @@ protected:
 
 public:
     typedef CPPListIterator Iterator;//声明迭代器
-    typedef CPPListIterator ConstIterator;//声明整形迭代器
+    typedef CPPListIterator ConstIterator;//声明常量迭代器
     // 构造函数
     CPPList();//默认构造函数，仅做初始化处理
     CPPList( const CPPList& rhs ) { copyNodes( rhs.first(), rhs._size); }//拷贝构造函数，用于最后一问
