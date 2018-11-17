@@ -4,3 +4,5 @@ cmake-build-debug
 .DS_Store
 assignments/assignment*/.idea
 assignments/assignment*/cmake-build-debug/
+CMakeCache.txt
+CmakeFiles/*

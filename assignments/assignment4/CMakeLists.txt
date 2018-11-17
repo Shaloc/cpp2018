@@ -3,6 +3,6 @@ project(assignment4)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_compile_options(-Wall)
+add_compile_options(-Wall -g -ggdb)
 
 add_executable(assignment4 main.cpp List.cpp)
