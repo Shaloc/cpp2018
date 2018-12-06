@@ -25,8 +25,7 @@ void KeyboardCallback(unsigned char key, int x, int y)
 	switch (key)
 	{
 	case 'q':
-		exit(0);
-		break;
+		exit(0); //此后不需要有任何操作了！
 	default:
 		break;
 	}
@@ -65,7 +64,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	// 1、从test.txt文件输入，以方便调试时键盘输入费时。
 	// 2、从命令行输入，以帮助在没有完全编写好代码时，无法用test.txt测试
 
-#if 0
+#if 1
     std::ifstream input("test.txt");  
     if (!input.is_open())  
     { 
@@ -84,8 +83,6 @@ int _tmain(int argc, _TCHAR* argv[])
 	board.InitDisplayCallback(DisplayCallback); 
 	board.InitKeyboardCallback(KeyboardCallback); 
 	board.InitReshapeCallback(ReshapeCallback); 
-	board.InstallTimerCallback(500, onTimer, 1);
-	board.InstallTimerCallback(500, onTimer, 2);
 	
 	board.Show(); 
 
